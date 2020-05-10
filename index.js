@@ -1,4 +1,5 @@
 const Discord = require('discord.js');
+const Shop = require('discord.js');
 const client = new Discord.Client();
 const http = require('http');
 const { prefix, token } = require('./config.json');
@@ -34,6 +35,9 @@ client.on('message', message => {
     const attachment = new Discord.MessageAttachment('./spongbob.jpg');
     message.channel.send(attachment);
     message.channel.send(`${msg}`)
+  }
+  else if(command === shop){
+    Shop.buildShop();
   }
   else if(command === 'dd'){
     let arr = [...args];
